@@ -2,12 +2,11 @@
 
 A prometheus exporter for Laravel.
 
-[![Author](http://img.shields.io/badge/author-@senaranya-blue.svg?style=flat-square)](https://twitter.com/senaranya)
-[![Build Status](https://img.shields.io/travis/Aranyasen/laravel-prometheus-exporter/master.svg?style=flat-square)](https://travis-ci.org/Aranyasen/laravel-prometheus-exporter)
-[![StyleCI](https://styleci.io/repos/98516814/shield?branch=master)](https://styleci.io/repos/98516814)
+<a href="https://travis-ci.org/senaranya/laravel-prometheus-exporter"><img src="https://travis-ci.org/senaranya/laravel-prometheus-exporter.svg?branch=master" alt="Build Status"></a>
 [![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE)
 [![Packagist Version](https://img.shields.io/packagist/v/aranyasen/laravel-prometheus-exporter.svg?style=flat-square)](https://packagist.org/packages/aranyasen/laravel-prometheus-exporter)
 [![Total Downloads](https://img.shields.io/packagist/dt/aranyasen/laravel-prometheus-exporter.svg?style=flat-square)](https://packagist.org/packages/aranyasen/laravel-prometheus-exporter)
+[![Author](http://img.shields.io/badge/author-@senaranya-blue.svg?style=flat-square)](https://twitter.com/senaranya)
 
 ## Installation
 
