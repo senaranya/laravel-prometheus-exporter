@@ -1,9 +1,7 @@
 <?php
 
-/** @var Route $route */
-
 use Aranyasen\LaravelPrometheusExporter\MetricsController;
-use Illuminate\Routing\Route;
+use Illuminate\Support\Facades\Route;
 
 $route = Route::get(
     config('prometheus.metrics_route_path'),
