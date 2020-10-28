@@ -40,7 +40,7 @@ PROMETHEUS_METRICS_ROUTE_ENABLED=true
 PROMETHEUS_METRICS_ROUTE_PATH=metrics
 PROMETHEUS_METRICS_ROUTE_MIDDLEWARE=null
 
-PROMETHEUS_STORAGE_ADAPTER=memory
+PROMETHEUS_STORAGE_ADAPTER=redis
 
 REDIS_HOST=localhost
 REDIS_PORT=6379
@@ -56,11 +56,11 @@ You can then edit the generated config at `app/config/prometheus.php`.
 
 ### Storage Adapters
 
-The storage adapter is used to persist metrics across requests.  The `memory` adapter is enabled by default, meaning
-data will only be persisted across the current request.  We recommend using the `redis` or `apc` adapter in production
-environments.
+The storage adapter is used to persist metrics across requests. 
 
 The `PROMETHEUS_STORAGE_ADAPTER` env var is used to specify the storage adapter.
+
+The `memory` adapter lets data persist only across the current request. For production, `redis` or `apc` are recommended.
 
 If `redis` is used, the `REDIS_HOST` and `REDIS_PORT` vars also need to be configured.
 
@@ -72,7 +72,7 @@ This can be turned on/off using the `PROMETHEUS_METRICS_ROUTE_ENABLED` var, and 
 `PROMETHEUS_METRICS_ROUTE_PATH` var.
 
 If you would like to protect this end-point, you can write any custom middleware and enable it using
-`PROMETHEUS_METRICS_ROUTE_MIDDLEWARE`.
+`PROMETHEUS_METRICS_ROUTE_MIDDLEWARE`. Multiple middleware can be supplied as comma-separated values, e.g. `PROMETHEUS_METRICS_ROUTE_MIDDLEWARE=auth.basic,superadmin` 
 
 ### Collectors
 

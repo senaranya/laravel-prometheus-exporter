@@ -12,16 +12,18 @@ use Aranyasen\LaravelPrometheusExporter\PrometheusExporter;
 
 class MetricsControllerTest extends TestCase
 {
-    public function testConstruct()
+    /** @test */
+    public function classes_can_be_initialized(): void
     {
         $responseFactory = Mockery::mock(ResponseFactory::class);
         $exporter = Mockery::mock(PrometheusExporter::class);
         $controller = new MetricsController($responseFactory, $exporter);
-        $this->assertSame($responseFactory, $controller->getResponseFactory());
-        $this->assertSame($exporter, $controller->getPrometheusExporter());
+        self::assertSame($responseFactory, $controller->getResponseFactory());
+        self::assertSame($exporter, $controller->getPrometheusExporter());
     }
 
-    public function testGetMetrics()
+    /** @test */
+    public function getMetrics(): void
     {
         $response = Mockery::mock(Response::class);
 
@@ -40,9 +42,9 @@ class MetricsControllerTest extends TestCase
             ->once()
             ->andReturn([]);
 
-        $controller = new MetricsController($responseFactory, $exporter);
-
-        $r = $controller->getMetrics();
-        $this->assertSame($response, $r);
+        self::assertSame(
+            $response,
+            (new MetricsController($responseFactory, $exporter))->getMetrics()
+        );
     }
 }

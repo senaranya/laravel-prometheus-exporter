@@ -22,7 +22,8 @@ class PrometheusServiceProvider extends ServiceProvider
             $this->loadRoutesFrom(__DIR__ . '/routes.php');
         }
 
-        $exporter = $this->app->make(PrometheusExporter::class); /* @var PrometheusExporter $exporter */
+        /** @var PrometheusExporter $exporter */
+        $exporter = $this->app->make(PrometheusExporter::class);
         foreach (config('prometheus.collectors') as $class) {
             $collector = $this->app->make($class);
             $exporter->registerCollector($collector);

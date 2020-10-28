@@ -6,17 +6,14 @@ use Prometheus\Gauge;
 
 class ExampleCollector implements CollectorInterface
 {
-    /**
-     * @var Gauge
-     */
-    protected $usersRegisteredGauge;
+    protected Gauge $usersRegisteredGauge;
 
     /**
      * Return the name of the collector.
      *
      * @return string
      */
-    public function getName()
+    public function getName(): string
     {
         return 'users';
     }
@@ -32,7 +29,7 @@ class ExampleCollector implements CollectorInterface
      *
      * @param PrometheusExporter $exporter
      */
-    public function registerMetrics(PrometheusExporter $exporter)
+    public function registerMetrics(PrometheusExporter $exporter): void
     {
         $this->usersRegisteredGauge = $exporter->registerGauge(
             'users_registered_total',
