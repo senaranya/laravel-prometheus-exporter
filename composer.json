@@ -15,7 +15,6 @@
     "promphp/prometheus_client_php": "^2"
   },
   "require-dev": {
-    "roave/security-advisories": "dev-master",
     "phpunit/phpunit": "^9",
     "mockery/mockery": "^1.4"
   },
