@@ -17,8 +17,9 @@ jobs:
         with:
           php-version: ${{ matrix.php-versions }}
           extensions: redis, apcu
+          ini-values: "apc.enable_cli=1"
       - name: Check PHP Version
-        run: php -m
+        run: php -v
 #      - name: Validate composer.json and composer.lock
 #        run: composer validate --strict
       - name: Cache Composer packages
